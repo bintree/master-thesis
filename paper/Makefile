@@ -5,7 +5,7 @@ all: $(NAME).pdf
 
 PDFLATEX =pdflatex --shell-escape $(TEX_SRC)
 
-$(NAME).pdf: *.tex
+$(NAME).pdf: *.tex *.bib
 	$(PDFLATEX)
 	bibtex $(NAME).aux
 	$(PDFLATEX)

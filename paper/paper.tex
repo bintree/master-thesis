@@ -32,6 +32,7 @@
 \usepackage{enumerate}
 \usepackage{totcount}
 \usepackage{verbments}
+\usepackage{perpage}
 
 \DeclareFontShape{OT1}{cmtt}{bx}{n}{<5><6><7><8><9><10><10.95><12><14.4><17.28><20.74><24.88>cmttb10}{}
 
@@ -121,6 +122,7 @@
 \floatstyle{plain} % optionally change the style of the new float
 \newfloat{code}{H}{myc}
 
+\newcommand{\fu}[1]{\footnote{\url{#1}}}
 
 %\definecolor{javapurple}{rgb}{0.25,0.35,0.9} % keywords
 %% \definecolor{javapurple}{rgb}{0.1,0.1,0.1}
@@ -137,6 +139,8 @@
 %showstringspaces=false,
 %morekeywords={fun, val, var, import, object, uses, classpath, let, for, do, select, in, return, new, null, class}
 %}
+
+\MakePerPage{footnote}
 
 \begin{document}
 \def\figurename{Рисунок}
