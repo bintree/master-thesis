@@ -35,6 +35,8 @@
 \usepackage{perpage}
 \usepackage{caption}
 \usepackage{varwidth}
+\usepackage{listings}
+\usepackage{listingsutf8}
 
 \newfloat{floatquote}{tbp}{loq}
 \floatname{floatquote}{Цитата}
@@ -86,6 +88,17 @@
     \end{varwidth}%
 }
 \captionsetup{format=myformat}% global activation
+
+\makeatletter
+\providecommand{\bigsqcap}{%
+\mathop{%
+\mathpalette\@updown\bigsqcup
+}%
+}
+\newcommand*{\@updown}[2]{%
+\rotatebox[origin=c]{180}{$\m@th#1#2$}%
+}
+\makeatother
 
 %% replaced with linespread? \renewcommand{\baselinestretch}{1.2}
 \sectionfont{\Large}
@@ -165,6 +178,10 @@
 \MakePerPage{footnote}
 
 \begin{document}
+\lstset{
+    inputencoding=utf8,
+    language=Pascal
+}
 \def\figurename{Рисунок}
 
 \input{title}
@@ -176,6 +193,7 @@
 \input{survey}
 \input{compilers_survey}
 \input{benchmarks}
+\input{optimizations}
 
 \newpage
 \nocite{*}
